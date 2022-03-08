@@ -16,7 +16,7 @@ var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var compression = require('compression');
 
-var serverPort = 3000;
+var serverPort = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
@@ -53,7 +53,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
 
 // Start the server
-http.createServer(app).listen(process.env.PORT || 5000, function () {
+http.createServer(app).listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
     console.log('Documentation ui (swagger) is available on (http://localhost:%d/docs)', serverPort);
     console.log('------ --- ----- EveryThing Is Ok , Have I Nice Day ------ --- -----');
