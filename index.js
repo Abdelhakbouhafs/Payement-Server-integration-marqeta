@@ -16,7 +16,7 @@ var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var compression = require('compression');
 
-var serverPort = 80;
+var serverPort = 3000;
 
 app.use(bodyParser.json());
 
